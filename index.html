@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>    
+    <title>Components Basics</title>
+  </head>
+<body>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="notification is-primary">
+        <h1 class="title">
+          Passing Data to Child Components with Props
+        </h1>
+      </div>
+      <div id="components-demo">
+        <div class="content">
+          <blog-post title="My journey with Vue"></blog-post>
+          <blog-post title="Blogging with Vue"></blog-post>
+          <blog-post title="Why Vue is so fun"></blog-post>
+        </div>
+      </div>
+      <div>
+        <pre>
+          <code>
+              blog-post title="My journey with Vue">blog-post
+              blog-post title="Blogging with Vue">blog-post
+              blog-post title="Why Vue is so fun">blog-post
+
+
+            Vue.component('blog-post',{
+              props: ['title'],
+              template: '<h3> {{ title }} </h3>'
+            })
+
+
+            new Vue({
+              el: '#components-demo'
+            })
+          </code>
+        </pre>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="vue.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
